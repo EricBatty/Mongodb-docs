@@ -285,6 +285,7 @@
 <h3 id="2&#x3001;&#x5728;-master-&#x8282;&#x70B9;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-root-&#x7528;&#x6237;">2&#x3001;&#x5728; master &#x8282;&#x70B9;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; root &#x7528;&#x6237;</h3>
 <blockquote>
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x7ED9;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x6743;&#x9650;&#x6BD4;&#x5982;&#xFF1A;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x548C;&#x89D2;&#x8272;&#x7684;&#x6743;&#x9650;&#x6216;&#x8005;&#x7ED9;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x6743;&#x9650;&#x3002;&#x5426;&#x5219;&#x96C6;&#x7FA4;&#x6743;&#x9650;&#x5F00;&#x542F;&#x540E;&#x53EF;&#x80FD;&#x81EA;&#x5DF1;&#x4F1A;&#x9762;&#x4E34;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#x7684;&#x5C34;&#x5C2C;</p>
+</blockquote>
 <pre><code class="lang-angular2">shard1:PRIMARY&gt; db.createUser(
 ... {
 ...   user: &quot;root&quot;, 
@@ -299,18 +300,16 @@
 root@General:~# ansible mongocluster -m shell -a &quot;chmod 400 /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/key&quot;
 </code></pre>
 <h3 id="5&#x3001;&#x4FEE;&#x6539;-mongodb-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">5&#x3001;&#x4FEE;&#x6539; mongodb &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
-<p>```angular2
-[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# vi config/shard.conf </p>
-<h1 id="&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;">&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;</h1>
-<p>...
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# vi config/shard.conf 
+#&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;
+...
 security:
    authorization: enabled
    keyFile:  /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/key/mongo.key
-...</p>
-</blockquote>
-<pre><code>### 6&#x3001;&#x91CD;&#x542F; Mongo &#x5B9E;&#x4F8B;  &#x9A8C;&#x8BC1;&#x6743;&#x9650;
-```angular2
-[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.93:27017
+...
+</code></pre>
+<h3 id="6&#x3001;&#x91CD;&#x542F;-mongo-&#x5B9E;&#x4F8B;--&#x9A8C;&#x8BC1;&#x6743;&#x9650;">6&#x3001;&#x91CD;&#x542F; Mongo &#x5B9E;&#x4F8B;  &#x9A8C;&#x8BC1;&#x6743;&#x9650;</h3>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.93:27017
 MongoDB shell version: 3.2.22
 connecting to: 192.168.0.93:27017/test
 shard1:PRIMARY&gt; show dbs;
@@ -334,6 +333,7 @@ admin  0.000GB
 local  0.000GB
 test   0.000GB
 </code></pre>
+
                                 
                                 </section>
                             
@@ -372,7 +372,7 @@ test   0.000GB
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安全: 副本集群安全认证","level":"1.4.1","depth":2,"previous":{"title":"安   全","level":"1.4","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.4.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"security/replication-security.md","mtime":"2019-04-29T07:18:29.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-29T07:18:31.610Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"安全: 副本集群安全认证","level":"1.4.1","depth":2,"previous":{"title":"安   全","level":"1.4","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.4.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"security/replication-security.md","mtime":"2019-04-29T07:22:32.782Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-29T07:22:35.909Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
