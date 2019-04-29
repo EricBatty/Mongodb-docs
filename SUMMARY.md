@@ -6,4 +6,6 @@
 * [复   制](output/README.md)
     * [复制: 复制集集群基础配置](MasterSlave/base.md)
     * [复制: 有关复制集设置的一些命令](MasterSlave/command.md)
+* [安   全](security/README.md)
+    * [安全: 副本集群安全认证](security/replication-security.md)
 

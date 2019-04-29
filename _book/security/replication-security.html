@@ -1,0 +1,411 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>安全: 副本集群安全认证 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../install/">
+            
+                <a href="../install/">
+            
+                    
+                    安   装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../install/CentOS7.X.html">
+            
+                <a href="../install/CentOS7.X.html">
+            
+                    
+                    安装: CentOS7.X install Mongo3.2.22 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../output/">
+            
+                <a href="../output/">
+            
+                    
+                    复   制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../MasterSlave/base.html">
+            
+                <a href="../MasterSlave/base.html">
+            
+                    
+                    复制: 复制集集群基础配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../MasterSlave/command.html">
+            
+                <a href="../MasterSlave/command.html">
+            
+                    
+                    复制: 有关复制集设置的一些命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    安   全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="replication-security.html">
+            
+                <a href="replication-security.html">
+            
+                    
+                    安全: 副本集群安全认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >安全: 副本集群安全认证</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5B89;&#x5168;-&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;">&#x5B89;&#x5168;: &#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;</h1>
+<h2 id="&#x73AF;&#x5883;&#x4ECB;&#x7ECD;">&#x73AF;&#x5883;&#x4ECB;&#x7ECD;</h2>
+<p>&#x5DF2;&#x6709;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5E76;&#x4E14;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4E2D;</p>
+<h2 id="&#x6B63;&#x5F0F;&#x5F00;&#x59CB;">&#x6B63;&#x5F0F;&#x5F00;&#x59CB;</h2>
+<h3 id="1&#x3001;&#x67E5;&#x627E;&#x526F;&#x672C;&#x96C6;-master-&#x8282;&#x70B9;">1&#x3001;&#x67E5;&#x627E;&#x526F;&#x672C;&#x96C6; master &#x8282;&#x70B9;</h3>
+<pre><code class="lang-angular2">shard1:PRIMARY&gt; rs.isMaster()  #&#x5982;&#x679C;&#x4F60;&#x8FDE;&#x63A5;&#x7684;&#x8282;&#x70B9;&#x662F;PRIMARY&#x72B6;&#x6001;&#x5C31;&#x4EE3;&#x8868;&#x5DF2;&#x7ECF;&#x662F;Master&#x8282;&#x70B9;
+{
+    &quot;hosts&quot; : [   #&#x6210;&#x5458;&#x8282;&#x70B9;
+        &quot;192.168.0.92:27017&quot;,
+        &quot;192.168.0.93:27017&quot;,
+        &quot;192.168.0.94:27017&quot;
+    ],
+    &quot;setName&quot; : &quot;shard1&quot;,   #&#x526F;&#x672C;&#x96C6;&#x540D;&#x5B57;
+    &quot;setVersion&quot; : 3,
+    &quot;ismaster&quot; : true,  #&#x662F;&#x4E0D;&#x662F;master&#x8282;&#x70B9;
+    &quot;secondary&quot; : false,  #&#x662F;&#x4E0D;&#x662F;&#x526F;&#x672C;&#x8282;&#x70B9;
+    &quot;primary&quot; : &quot;192.168.0.93:27017&quot;, # master&#x8282;&#x70B9;
+    &quot;me&quot; : &quot;192.168.0.93:27017&quot;,  
+    &quot;electionId&quot; : ObjectId(&quot;7fffffff0000000000000005&quot;),
+    &quot;maxBsonObjectSize&quot; : 16777216,
+    &quot;maxMessageSizeBytes&quot; : 48000000,
+    &quot;maxWriteBatchSize&quot; : 1000,
+    &quot;localTime&quot; : ISODate(&quot;2019-04-29T07:03:58.670Z&quot;),
+    &quot;maxWireVersion&quot; : 4,
+    &quot;minWireVersion&quot; : 0,
+    &quot;ok&quot; : 1
+}
+</code></pre>
+<h3 id="2&#x3001;&#x5728;-master-&#x8282;&#x70B9;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-root-&#x7528;&#x6237;">2&#x3001;&#x5728; master &#x8282;&#x70B9;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; root &#x7528;&#x6237;</h3>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x7ED9;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x6743;&#x9650;&#x6BD4;&#x5982;&#xFF1A;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x548C;&#x89D2;&#x8272;&#x7684;&#x6743;&#x9650;&#x6216;&#x8005;&#x7ED9;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x6743;&#x9650;&#x3002;&#x5426;&#x5219;&#x96C6;&#x7FA4;&#x6743;&#x9650;&#x5F00;&#x542F;&#x540E;&#x53EF;&#x80FD;&#x81EA;&#x5DF1;&#x4F1A;&#x9762;&#x4E34;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#x7684;&#x5C34;&#x5C2C;</p>
+<pre><code class="lang-angular2">shard1:PRIMARY&gt; db.createUser(
+... {
+...   user: &quot;root&quot;, 
+...   pwd: &quot;root&quot;, 
+...   roles: [ { role: &quot;root&quot;, db: &quot;admin&quot;}]})
+</code></pre>
+<h3 id="3&#x3001;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;">3&#x3001;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-angular2">root@General:~# openssl rand -base64 756 &gt; mongo.key
+</code></pre>
+<h3 id="4&#x3001;&#x4F20;&#x8F93;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#x5E76;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x4E3A;-400">4&#x3001;&#x4F20;&#x8F93;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#x5E76;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x4E3A; 400</h3>
+<pre><code class="lang-angular2">root@General:~# ansible mongocluster -m copy -a &quot;src=/root/mongo.key dest=mongodb-linux-x86_64-rhel70-3.2.22/key&quot;
+root@General:~# ansible mongocluster -m shell -a &quot;chmod 400 /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/key&quot;
+</code></pre>
+<h3 id="5&#x3001;&#x4FEE;&#x6539;-mongodb-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">5&#x3001;&#x4FEE;&#x6539; mongodb &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p>```angular2
+[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# vi config/shard.conf </p>
+<h1 id="&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;">&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;</h1>
+<p>...
+security:
+   authorization: enabled
+   keyFile:  /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/key/mongo.key
+...</p>
+</blockquote>
+<pre><code>### 6&#x3001;&#x91CD;&#x542F; Mongo &#x5B9E;&#x4F8B;  &#x9A8C;&#x8BC1;&#x6743;&#x9650;
+```angular2
+[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.93:27017
+MongoDB shell version: 3.2.22
+connecting to: 192.168.0.93:27017/test
+shard1:PRIMARY&gt; show dbs;
+2019-04-29T03:14:58.311-0400 E QUERY    [thread1] Error: listDatabases failed:{
+    &quot;ok&quot; : 0,
+    &quot;errmsg&quot; : &quot;not authorized on admin to execute command { listDatabases: 1.0 }&quot;,
+    &quot;code&quot; : 13
+} :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+Mongo.prototype.getDBs@src/mongo/shell/mongo.js:62:1
+shellHelper.show@src/mongo/shell/utils.js:781:19
+shellHelper@src/mongo/shell/utils.js:671:15
+@(shellhelp2):1:1
+#&#x8FDB;&#x884C;&#x6743;&#x9650;&#x9A8C;&#x8BC1;
+shard1:PRIMARY&gt; use admin
+switched to db admin
+shard1:PRIMARY&gt; db.auth(&quot;root&quot;,&quot;root&quot;)
+1
+shard1:PRIMARY&gt; show dbs;
+admin  0.000GB
+local  0.000GB
+test   0.000GB
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 安   全">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"安全: 副本集群安全认证","level":"1.4.1","depth":2,"previous":{"title":"安   全","level":"1.4","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.4.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"security/replication-security.md","mtime":"2019-04-29T07:15:40.550Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-29T07:15:57.026Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
