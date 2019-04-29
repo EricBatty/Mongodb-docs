@@ -1,0 +1,451 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>复制: 复制集集群基础配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="command.html" />
+    
+    
+    <link rel="prev" href="../output/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../install/">
+            
+                <a href="../install/">
+            
+                    
+                    安   装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../install/CentOS7.X.html">
+            
+                <a href="../install/CentOS7.X.html">
+            
+                    
+                    安装: CentOS7.X install Mongo3.2.22 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../output/">
+            
+                <a href="../output/">
+            
+                    
+                    复   制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                    复制: 复制集集群基础配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    复制: 有关复制集设置的一些命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >复制: 复制集集群基础配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x590D;&#x5236;-&#x590D;&#x5236;&#x96C6;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;">&#x590D;&#x5236;: &#x590D;&#x5236;&#x96C6;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</h1>
+<h2 id="&#x73AF;&#x5883;&#x4ECB;&#x7ECD;">&#x73AF;&#x5883;&#x4ECB;&#x7ECD;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x7CFB;&#x7EDF;&#x7248;&#x672C;</th>
+<th>&#x670D;&#x52A1;&#x5668;ip&#x5730;&#x5740;</th>
+<th>MongoDB&#x7248;&#x672C;</th>
+<th>&#x7AEF;&#x53E3;&#x53F7;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.92</td>
+<td>mongodb-linux-x86_64-rhel62-3.6.5.tgz</td>
+<td>27017</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.93</td>
+<td>mongodb-linux-x86_64-rhel62-3.6.5.tgz</td>
+<td>27017</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.94</td>
+<td>mongodb-linux-x86_64-rhel62-3.6.5.tgz</td>
+<td>27017</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x6B63;&#x5F0F;&#x5F00;&#x59CB;">&#x6B63;&#x5F0F;&#x5F00;&#x59CB;</h2>
+<p>&#x672C;&#x5B9E;&#x8DF5;&#x5176;&#x4E2D;&#x6709;&#x4F7F;&#x7528;ansible&#x5DE5;&#x5177;&#x4FBF;&#x4E8E;&#x5FEB;&#x901F;&#x90E8;&#x7F72;&#x3002;</p>
+<h3 id="1&#x3001;&#x5B89;&#x88C5;mongodb">1&#x3001;&#x5B89;&#x88C5;MongoDB</h3>
+<pre><code class="lang-angular2">$ wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-3.2.22.tgz
+$ ansible -i inventory mongocluster -m copy -a &apos;src=/Users/jinxiaozhang/mongodb-linux-x86_64-rhel62-3.6.5.tgz dest=/usr/local/&apos;
+$ ansible -i inventory mongocluster -m shell -a &apos;tar zxvf /usr/local/mongodb-linux-x86_64-rhel62-3.6.5.tgz -C /usr/local/
+</code></pre>
+<h3 id="2&#x3001;&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x8981;&#x7684;&#x76EE;&#x5F55;">2&#x3001;&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x8981;&#x7684;&#x76EE;&#x5F55;</h3>
+<pre><code class="lang-angular2">$ ansible -i inventory mongocluster -m shell -a &apos;mkdir /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/data&apos; 
+$ ansible -i inventory mongocluster -m shell -a &apos;mkdir /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/shard1&apos; 
+$ ansible -i inventory mongocluster -m shell -a &apos;mkdir /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/logs&apos; 
+$ ansible -i inventory mongocluster -m shell -a &apos;mkdir /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/config&apos; 
+$ ansible -i inventory mongocluster -m shell -a &apos;mkdir /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/key&apos;
+</code></pre>
+<h3 id="3&#x3001;&#x521B;&#x5EFA;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">3&#x3001;&#x521B;&#x5EFA;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-angular2">
+[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat shard1.conf
+systemLog:
+  destination: file
+  path: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/logs/shard1.log&quot;
+  logAppend: true
+storage:
+  dbPath:   /usr/local/mongodb-linux-x86_64-rhel70-3.2.22/data/shard1
+  engine: wiredTiger
+#  oplogSize: 51200
+processManagement:
+  fork: true
+net:
+  bindIp: 192.168.0.92 #&#x5176;&#x4ED6;&#x4E24;&#x53F0;&#x673A;&#x5668;&#x5206;&#x522B;&#x6539;&#x4E3A;192.168.0.93 ; 192.168.0.94
+  port: 27017
+replication:
+  replSetName:  shard1
+</code></pre>
+<h3 id="4&#x3001;&#x542F;&#x52A8;&#x670D;&#x52A1;">4&#x3001;&#x542F;&#x52A8;&#x670D;&#x52A1;</h3>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongod -f config/shard1.conf
+[root@node93 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongod -f config/shard1.conf
+[root@node94 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongod -f config/shard1.conf
+</code></pre>
+<h3 id="5&#x3001;&#x521D;&#x59CB;&#x5316;&#x526F;&#x672C;&#x96C6;&#x7FA4;">5&#x3001;&#x521D;&#x59CB;&#x5316;&#x526F;&#x672C;&#x96C6;&#x7FA4;</h3>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.92:27017
+&gt; rs.initiate() #&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x7FA4;
+</code></pre>
+<h3 id="6&#x3001;&#x5411;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#x6210;&#x5458;">6&#x3001;&#x5411;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#x6210;&#x5458;</h3>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.92:27017
+&gt; rs.add(&quot;192.168.0.93:27017&quot;)
+&gt; rs.add(&quot;192.168.0.94:27017&quot;)
+</code></pre>
+<h3 id="7&#x3001;&#x67E5;&#x770B;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x72B6;&#x6001;">7&#x3001;&#x67E5;&#x770B;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x72B6;&#x6001;</h3>
+<pre><code class="lang-angular2">shard1:PRIMARY&gt; rs.status()
+{
+    &quot;set&quot; : &quot;shard1&quot;,
+    &quot;date&quot; : ISODate(&quot;2019-04-29T06:48:45.798Z&quot;),
+    &quot;myState&quot; : 1,
+    &quot;term&quot; : NumberLong(5),
+    &quot;heartbeatIntervalMillis&quot; : NumberLong(2000),
+    &quot;members&quot; : [
+        {
+            &quot;_id&quot; : 0,
+            &quot;name&quot; : &quot;192.168.0.92:27017&quot;,
+            &quot;health&quot; : 1,
+            &quot;state&quot; : 2,
+            &quot;stateStr&quot; : &quot;SECONDARY&quot;,
+            &quot;uptime&quot; : 10961,
+            &quot;optime&quot; : {
+                &quot;ts&quot; : Timestamp(1556509844, 1),
+                &quot;t&quot; : NumberLong(5)
+            },
+            &quot;optimeDate&quot; : ISODate(&quot;2019-04-29T03:50:44Z&quot;),
+            &quot;lastHeartbeat&quot; : ISODate(&quot;2019-04-29T06:48:44.593Z&quot;),
+            &quot;lastHeartbeatRecv&quot; : ISODate(&quot;2019-04-29T06:48:45.714Z&quot;),
+            &quot;pingMs&quot; : NumberLong(1),
+            &quot;syncingTo&quot; : &quot;192.168.0.94:27017&quot;,
+            &quot;configVersion&quot; : 3
+        },
+        {
+            &quot;_id&quot; : 1,
+            &quot;name&quot; : &quot;192.168.0.93:27017&quot;,
+            &quot;health&quot; : 1,
+            &quot;state&quot; : 1,
+            &quot;stateStr&quot; : &quot;PRIMARY&quot;,
+            &quot;uptime&quot; : 10988,
+            &quot;optime&quot; : {
+                &quot;ts&quot; : Timestamp(1556509844, 1),
+                &quot;t&quot; : NumberLong(5)
+            },
+            &quot;optimeDate&quot; : ISODate(&quot;2019-04-29T03:50:44Z&quot;),
+            &quot;electionTime&quot; : Timestamp(1556509548, 1),
+            &quot;electionDate&quot; : ISODate(&quot;2019-04-29T03:45:48Z&quot;),
+            &quot;configVersion&quot; : 3,
+            &quot;self&quot; : true
+        },
+        {
+            &quot;_id&quot; : 2,
+            &quot;name&quot; : &quot;192.168.0.94:27017&quot;,
+            &quot;health&quot; : 1,
+            &quot;state&quot; : 2,
+            &quot;stateStr&quot; : &quot;SECONDARY&quot;,
+            &quot;uptime&quot; : 10988,
+            &quot;optime&quot; : {
+                &quot;ts&quot; : Timestamp(1556509844, 1),
+                &quot;t&quot; : NumberLong(5)
+            },
+            &quot;optimeDate&quot; : ISODate(&quot;2019-04-29T03:50:44Z&quot;),
+            &quot;lastHeartbeat&quot; : ISODate(&quot;2019-04-29T06:48:45.700Z&quot;),
+            &quot;lastHeartbeatRecv&quot; : ISODate(&quot;2019-04-29T06:48:44.725Z&quot;),
+            &quot;pingMs&quot; : NumberLong(0),
+            &quot;syncingTo&quot; : &quot;192.168.0.93:27017&quot;,
+            &quot;configVersion&quot; : 3
+        }
+    ],
+    &quot;ok&quot; : 1
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../output/" class="navigation navigation-prev " aria-label="Previous page: 复   制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="command.html" class="navigation navigation-next " aria-label="Next page: 复制: 有关复制集设置的一些命令">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"复制: 复制集集群基础配置","level":"1.3.1","depth":2,"next":{"title":"复制: 有关复制集设置的一些命令","level":"1.3.2","depth":2,"path":"MasterSlave/command.md","ref":"MasterSlave/command.md","articles":[]},"previous":{"title":"复   制","level":"1.3","depth":1,"path":"output/README.md","ref":"output/README.md","articles":[{"title":"复制: 复制集集群基础配置","level":"1.3.1","depth":2,"path":"MasterSlave/base.md","ref":"MasterSlave/base.md","articles":[]},{"title":"复制: 有关复制集设置的一些命令","level":"1.3.2","depth":2,"path":"MasterSlave/command.md","ref":"MasterSlave/command.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MasterSlave/base.md","mtime":"2019-04-29T06:49:00.344Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-29T06:49:39.492Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
