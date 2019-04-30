@@ -196,12 +196,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../output/">
+        <li class="chapter " data-level="1.4" data-path="../Replication/">
             
-                <a href="../output/">
+                <a href="../Replication/">
             
                     
-                    复   制
+                    副   本
             
                 </a>
             
@@ -210,12 +210,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../MasterSlave/base.html">
+        <li class="chapter " data-level="1.4.1" data-path="../Replication/baseconfig.html">
             
-                <a href="../MasterSlave/base.html">
+                <a href="../Replication/baseconfig.html">
             
                     
-                    复制: 复制集集群基础配置
+                    副本: 副本集集群基础配置
             
                 </a>
             
@@ -223,12 +223,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../MasterSlave/command.html">
+        <li class="chapter " data-level="1.4.2" data-path="../Replication/command.html">
             
-                <a href="../MasterSlave/command.html">
+                <a href="../Replication/command.html">
             
                     
-                    复制: 有关复制集设置的一些命令
+                    副本: 有关复制集设置的一些命令
             
                 </a>
             
@@ -241,7 +241,71 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../Shards/">
+            
+                <a href="../Shards/">
+            
+                    
+                    分   片
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Shards/baseconfig.html">
+            
+                <a href="../Shards/baseconfig.html">
+            
+                    
+                    分片: 分片集群基础配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Cluster/">
+            
+                <a href="../Cluster/">
+            
+                    
+                    集   群
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Cluster/baseconfig.html">
+            
+                <a href="../Cluster/baseconfig.html">
+            
+                    
+                    集群: 分片副本集群基础配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
             
                 <a href="./">
             
@@ -255,7 +319,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="replication-security.html">
+        <li class="chapter active" data-level="1.7.1" data-path="replication-security.html">
             
                 <a href="replication-security.html">
             
@@ -320,7 +384,7 @@
                                 
                                 <h1 id="&#x5B89;&#x5168;-&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;">&#x5B89;&#x5168;: &#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;</h1>
 <h2 id="&#x73AF;&#x5883;&#x4ECB;&#x7ECD;">&#x73AF;&#x5883;&#x4ECB;&#x7ECD;</h2>
-<p>&#x5DF2;&#x6709;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5E76;&#x4E14;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4E2D;&#xFF0C;&#x57FA;&#x4E8E;<a href="../MasterSlave/base.html">&#x590D;&#x5236;: &#x590D;&#x5236;&#x96C6;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</a>&#x6587;&#x4E2D;&#x642D;&#x5EFA;&#x597D;&#x7684;&#x73AF;&#x5883;&#x3002;</p>
+<p>&#x5DF2;&#x6709;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x5E76;&#x4E14;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4E2D;&#xFF0C;&#x57FA;&#x4E8E;<a href="../MasterSlave/base.md">&#x590D;&#x5236;: &#x590D;&#x5236;&#x96C6;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</a>&#x6587;&#x4E2D;&#x642D;&#x5EFA;&#x597D;&#x7684;&#x73AF;&#x5883;&#x3002;</p>
 <h2 id="&#x6B63;&#x5F0F;&#x5F00;&#x59CB;">&#x6B63;&#x5F0F;&#x5F00;&#x59CB;</h2>
 <h3 id="1&#x3001;&#x67E5;&#x627E;&#x526F;&#x672C;&#x96C6;-master-&#x8282;&#x70B9;">1&#x3001;&#x67E5;&#x627E;&#x526F;&#x672C;&#x96C6; master &#x8282;&#x70B9;</h3>
 <pre><code class="lang-angular2">shard1:PRIMARY&gt; rs.isMaster()  #&#x5982;&#x679C;&#x4F60;&#x8FDE;&#x63A5;&#x7684;&#x8282;&#x70B9;&#x662F;PRIMARY&#x72B6;&#x6001;&#x5C31;&#x4EE3;&#x8868;&#x5DF2;&#x7ECF;&#x662F;Master&#x8282;&#x70B9;
@@ -436,7 +500,7 @@ test   0.000GB
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安全: 副本集群安全认证","level":"1.5.1","depth":2,"previous":{"title":"安   全","level":"1.5","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.5.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"security/replication-security.md","mtime":"2019-04-29T07:22:32.782Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T02:28:50.544Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"安全: 副本集群安全认证","level":"1.7.1","depth":2,"previous":{"title":"安   全","level":"1.7","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.7.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"security/replication-security.md","mtime":"2019-04-29T07:22:32.782Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T04:01:09.344Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

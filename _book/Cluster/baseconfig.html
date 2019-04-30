@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>安   装 · GitBook</title>
+        <title>集群: 分片副本集群基础配置 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="CentOS7.X.html" />
+    <link rel="next" href="../security/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../install/">
             
-                <a href="./">
+                <a href="../install/">
             
                     
                     安   装
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="CentOS7.X.html">
+        <li class="chapter " data-level="1.2.1" data-path="../install/CentOS7.X.html">
             
-                <a href="CentOS7.X.html">
+                <a href="../install/CentOS7.X.html">
             
                     
                     安装: CentOS7.X install Mongo3.2.22 示例
@@ -275,9 +275,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../Cluster/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../Cluster/">
+                <a href="./">
             
                     
                     集   群
@@ -289,9 +289,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../Cluster/baseconfig.html">
+        <li class="chapter active" data-level="1.6.1" data-path="baseconfig.html">
             
-                <a href="../Cluster/baseconfig.html">
+                <a href="baseconfig.html">
             
                     
                     集群: 分片副本集群基础配置
@@ -369,7 +369,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >安   装</a>
+        <a href=".." >集群: 分片副本集群基础配置</a>
     </h1>
 </div>
 
@@ -384,7 +384,159 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B89;---&#x88C5;">&#x5B89;   &#x88C5;</h1>
+                                <h1 id="&#x96C6;&#x7FA4;-&#x5206;&#x7247;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;">&#x96C6;&#x7FA4;: &#x5206;&#x7247;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</h1>
+<h2 id="&#x73AF;&#x5883;&#x4ECB;&#x7ECD;">&#x73AF;&#x5883;&#x4ECB;&#x7ECD;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x7CFB;&#x7EDF;&#x7248;&#x672C;</th>
+<th>&#x670D;&#x52A1;&#x5668;ip&#x5730;&#x5740;</th>
+<th>&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x89D2;&#x8272;</th>
+<th>&#x7AEF;&#x53E3;&#x53F7;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.92</td>
+<td>Master</td>
+<td>30000</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.92</td>
+<td>config</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.92</td>
+<td>shard1</td>
+<td>27017</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.92</td>
+<td>shard2</td>
+<td>27018</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.92</td>
+<td>shard3</td>
+<td>27019</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.93</td>
+<td>config</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.93</td>
+<td>shard1</td>
+<td>27017</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.93</td>
+<td>shard2</td>
+<td>27018</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.93</td>
+<td>shard3</td>
+<td>27019</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.94</td>
+<td>config</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.94</td>
+<td>shard1</td>
+<td>27017</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.94</td>
+<td>shard2</td>
+<td>27018</td>
+</tr>
+<tr>
+<td>CentOS Linux release 7.6.1810 (Core)</td>
+<td>192.168.0.94</td>
+<td>shard3</td>
+<td>27019</td>
+</tr>
+</tbody>
+</table>
+<p>&#x9996;&#x5148;&#x6839;&#x636E; <a href="../Replication/baseconfig.html">&#x526F;&#x672C;: &#x526F;&#x672C;&#x96C6;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</a> &#x521B;&#x5EFA;&#x51FA;&#x4E09;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x96C6;&#x7FA4;,&#x526F;&#x672C;&#x96C6;&#x540D;&#x79F0;&#x5206;&#x522B;&#x4E3A;shard1&#x3001;shard2&#x3001;shard3&#x3002;</p>
+<h2 id="&#x6B63;&#x5F0F;&#x5F00;&#x59CB;">&#x6B63;&#x5F0F;&#x5F00;&#x59CB;</h2>
+<h3 id="1&#x3001;&#x914D;&#x7F6E;-mongos-&#x5206;&#x7247;&#x96C6;&#x8DEF;&#x7531;&#x8282;&#x70B9;">1&#x3001;&#x914D;&#x7F6E; mongos &#x5206;&#x7247;&#x96C6;&#x8DEF;&#x7531;&#x8282;&#x70B9;</h3>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat config/mongos.conf 
+systemLog:
+   destination: file
+   path: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/logs/mongos.log&quot;
+   logAppend: true
+processManagement:
+   fork: true
+net:
+   bindIp: 192.168.0.92
+   port: 30000
+sharding:
+  configDB: 192.168.0.92:20000,192.168.0.93:20000,192.168.0.94:20000
+  chunkSize: 64
+</code></pre>
+<h3 id="2&#x3001;&#x914D;&#x7F6E;-configsvr-&#x5206;&#x7247;&#x96C6;&#x914D;&#x7F6E;&#x8282;&#x70B9;">2&#x3001;&#x914D;&#x7F6E; configsvr &#x5206;&#x7247;&#x96C6;&#x914D;&#x7F6E;&#x8282;&#x70B9;</h3>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4ECE;3.4&#x5F00;&#x59CB;&#xFF0C;mongod &#x4E0D;&#x518D;&#x652F;&#x6301;&#x5C06;&#x5DF2;&#x5F03;&#x7528;&#x7684;&#x955C;&#x50CF;&#x5B9E;&#x4F8B;&#x7528;&#x4F5C;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x5668;&#xFF08;SCCC&#xFF09;&#x3002;&#x5728;&#x5C06;&#x5206;&#x7247;&#x7FA4;&#x96C6;&#x5347;&#x7EA7;&#x5230;3.4&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x5C06;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x5668;&#x4ECE;SCCC&#x8F6C;&#x6362;&#x4E3A;CSRS&#x3002;</p>
+</blockquote>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat config/config.conf 
+systemLog:
+   destination: file
+   path: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/logs/config.log&quot;
+   logAppend: true
+storage:
+   dbPath: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/data&quot;
+   directoryPerDB: true
+   journal:
+      enabled: true
+processManagement:
+   fork: true
+net:
+   bindIp: 192.168.0.92
+   port: 20000
+sharding:
+   clusterRole: configsvr
+</code></pre>
+<h3 id="3&#x3001;&#x5728;&#x5404;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x89D2;&#x8272;">3&#x3001;&#x5728;&#x5404;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x89D2;&#x8272;</h3>
+<p>&#x4EE5; node92 &#x526F;&#x672C;&#x96C6; shard1 &#x4E3A;&#x4F8B;&#xFF0C;&#x5176;&#x4ED6;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x4F9D;&#x6B21;&#x6DFB;&#x52A0;&#x3002;</p>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat config/shard1.conf 
+...
+sharding:
+  clusterRole: shardsvr
+...
+</code></pre>
+<h3 id="4&#x3001;&#x91CD;&#x542F;&#x5404;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;-&#x542F;&#x52A8;mognos&#x548C;configsvr">4&#x3001;&#x91CD;&#x542F;&#x5404;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9; &#x542F;&#x52A8;mognos&#x548C;configsvr</h3>
+<pre><code class="lang-angular2">#&#x4E3E;&#x4F8B;&#x542F;&#x52A8; &#x4F9D;&#x6B21;&#x542F;&#x52A8;&#x5404; Mongo Cluster Node&#x3002;
+[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongos -f config/mongos.conf
+[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongod -f config/config.conf
+</code></pre>
+<h3 id="5&#x3001;&#x5728;-mongos-&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x4E3A;&#x5206;&#x7247;&#x8282;&#x70B9;">5&#x3001;&#x5728; mongos &#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x4E3A;&#x5206;&#x7247;&#x8282;&#x70B9;</h3>
+<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.92:30000
+MongoDB shell version: 3.2.22
+connecting to: 192.168.0.92:30000/test
+mongos&gt; sh.addShard(&quot;shard1/192.168.0.92:27017&quot;)
+mongos&gt; sh.addShard(&quot;shard2/192.168.0.92:27018&quot;)
+mongos&gt; sh.addShard(&quot;shard3/192.168.0.92:27019&quot;)
+</code></pre>
+<h3 id="6&#x3001;&#x642D;&#x5EFA;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x5373;&#x53EF;">6&#x3001;&#x642D;&#x5EFA;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x5373;&#x53EF;</h3>
 
                                 
                                 </section>
@@ -412,12 +564,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 集   群">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="CentOS7.X.html" class="navigation navigation-next " aria-label="Next page: 安装: CentOS7.X install Mongo3.2.22 示例">
+                <a href="../security/" class="navigation navigation-next " aria-label="Next page: 安   全">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -428,7 +580,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安   装","level":"1.2","depth":1,"next":{"title":"安装: CentOS7.X install Mongo3.2.22 示例","level":"1.2.1","depth":2,"path":"install/CentOS7.X.md","ref":"install/CentOS7.X.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"install/README.md","mtime":"2019-04-29T06:27:18.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T04:01:09.344Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"集群: 分片副本集群基础配置","level":"1.6.1","depth":2,"next":{"title":"安   全","level":"1.7","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.7.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"previous":{"title":"集   群","level":"1.6","depth":1,"path":"Cluster/README.md","ref":"Cluster/README.md","articles":[{"title":"集群: 分片副本集群基础配置","level":"1.6.1","depth":2,"path":"Cluster/baseconfig.md","ref":"Cluster/baseconfig.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Cluster/baseconfig.md","mtime":"2019-04-30T03:47:48.263Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T04:01:09.344Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
