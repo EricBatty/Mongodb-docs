@@ -30,7 +30,9 @@ Journaling是如何工作的？
 
 ![journaling-5.png](../../images/journaling-5.png)
 
-此时，写入是安全的。如果mongod崩溃，日志可以重播更改。即使它尚未进入数据文件，然后，日志将在共享视图上重播此更改。
+此时，写入是安全的。如果mongod崩溃，日志可以重播更改,即使它尚未进入数据文件.
+
+然后，日志将在共享视图上重播此更改。
 
 ![journaling-6.png](../../images/journaling-6.png)
 
