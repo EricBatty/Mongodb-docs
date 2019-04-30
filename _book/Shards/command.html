@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>集群: 分片副本集群基础配置 · GitBook</title>
+        <title>分片: 有关分片集群设置的一些命令 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../security/" />
+    <link rel="next" href="../Cluster/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="baseconfig.html" />
     
 
     </head>
@@ -243,9 +243,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../Shards/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../Shards/">
+                <a href="./">
             
                     
                     分   片
@@ -257,9 +257,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Shards/baseconfig.html">
+        <li class="chapter " data-level="1.5.1" data-path="baseconfig.html">
             
-                <a href="../Shards/baseconfig.html">
+                <a href="baseconfig.html">
             
                     
                     分片: 分片集群基础配置
@@ -270,9 +270,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../Shards/command.html">
+        <li class="chapter active" data-level="1.5.2" data-path="command.html">
             
-                <a href="../Shards/command.html">
+                <a href="command.html">
             
                     
                     分片: 有关分片集群设置的一些命令
@@ -288,9 +288,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="../Cluster/">
             
-                <a href="./">
+                <a href="../Cluster/">
             
                     
                     集   群
@@ -302,9 +302,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.6.1" data-path="baseconfig.html">
+        <li class="chapter " data-level="1.6.1" data-path="../Cluster/baseconfig.html">
             
-                <a href="baseconfig.html">
+                <a href="../Cluster/baseconfig.html">
             
                     
                     集群: 分片副本集群基础配置
@@ -382,7 +382,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >集群: 分片副本集群基础配置</a>
+        <a href=".." >分片: 有关分片集群设置的一些命令</a>
     </h1>
 </div>
 
@@ -397,159 +397,69 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x96C6;&#x7FA4;-&#x5206;&#x7247;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;">&#x96C6;&#x7FA4;: &#x5206;&#x7247;&#x526F;&#x672C;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</h1>
-<h2 id="&#x73AF;&#x5883;&#x4ECB;&#x7ECD;">&#x73AF;&#x5883;&#x4ECB;&#x7ECD;</h2>
+                                <h1 id="&#x5206;&#x7247;-&#x6709;&#x5173;&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x8BBE;&#x7F6E;&#x7684;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;">&#x5206;&#x7247;: &#x6709;&#x5173;&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x8BBE;&#x7F6E;&#x7684;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;</h1>
+<h2 id="shaddshard">sh.addShard()</h2>
+<h3 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h3>
+<p>sh.addShard(\<url\>)  #&#x5FC5;&#x987B;&#x5728;mongos&#x5B9E;&#x4F8B;&#x4E0A;&#x8FD0;&#x884C;&#x6B64;&#x65B9;&#x6CD5;&#x3002;</url\></p>
+<p>&#x5C06;&#x5206;&#x7247;&#x526F;&#x672C;&#x96C6;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x7247;&#x7FA4;&#x96C6;&#x3002;</p>
 <table>
 <thead>
 <tr>
-<th>&#x7CFB;&#x7EDF;&#x7248;&#x672C;</th>
-<th>&#x670D;&#x52A1;&#x5668;ip&#x5730;&#x5740;</th>
-<th>&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x89D2;&#x8272;</th>
-<th>&#x7AEF;&#x53E3;&#x53F7;</th>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.92</td>
-<td>Master</td>
-<td>30000</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.92</td>
-<td>config</td>
-<td>20000</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.92</td>
-<td>shard1</td>
-<td>27017</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.92</td>
-<td>shard2</td>
-<td>27018</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.92</td>
-<td>shard3</td>
-<td>27019</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.93</td>
-<td>config</td>
-<td>20000</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.93</td>
-<td>shard1</td>
-<td>27017</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.93</td>
-<td>shard2</td>
-<td>27018</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.93</td>
-<td>shard3</td>
-<td>27019</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.94</td>
-<td>config</td>
-<td>20000</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.94</td>
-<td>shard1</td>
-<td>27017</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.94</td>
-<td>shard2</td>
-<td>27018</td>
-</tr>
-<tr>
-<td>CentOS Linux release 7.6.1810 (Core)</td>
-<td>192.168.0.94</td>
-<td>shard3</td>
-<td>27019</td>
+<td>host</td>
+<td>string</td>
+<td>&#x788E;&#x7247;&#x526F;&#x672C;&#x96C6;&#x7684;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x7684;&#x526F;&#x672C;&#x96C6;&#x540D;&#x79F0;&#xFF0C;&#x4E3B;&#x673A;&#x540D;&#x548C;&#x7AEF;&#x53E3;&#x3002;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x526F;&#x672C;&#x96C6;&#x6210;&#x5458;&#x4E3B;&#x673A;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;&#x3002;&#x4F8B;&#x5982;&#xFF1A;<replica_set> / <hostname> &lt;&#xFF1A;port&gt;&#xFF0C;<hostname> &lt;&#xFF1A;port&gt;&#xFF0C;...</hostname></hostname></replica_set></td>
 </tr>
 </tbody>
 </table>
-<p>&#x9996;&#x5148;&#x6839;&#x636E; <a href="../Replication/baseconfig.html">&#x526F;&#x672C;: &#x526F;&#x672C;&#x96C6;&#x96C6;&#x7FA4;&#x57FA;&#x7840;&#x914D;&#x7F6E;</a> &#x521B;&#x5EFA;&#x51FA;&#x4E09;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x96C6;&#x7FA4;,&#x526F;&#x672C;&#x96C6;&#x540D;&#x79F0;&#x5206;&#x522B;&#x4E3A;shard1&#x3001;shard2&#x3001;shard3&#x3002;</p>
-<h2 id="&#x6B63;&#x5F0F;&#x5F00;&#x59CB;">&#x6B63;&#x5F0F;&#x5F00;&#x59CB;</h2>
-<h3 id="1&#x3001;&#x914D;&#x7F6E;-mongos-&#x5206;&#x7247;&#x96C6;&#x8DEF;&#x7531;&#x8282;&#x70B9;">1&#x3001;&#x914D;&#x7F6E; mongos &#x5206;&#x7247;&#x96C6;&#x8DEF;&#x7531;&#x8282;&#x70B9;</h3>
-<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat config/mongos.conf 
-systemLog:
-   destination: file
-   path: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/logs/mongos.log&quot;
-   logAppend: true
-processManagement:
-   fork: true
-net:
-   bindIp: 192.168.0.92
-   port: 30000
-sharding:
-  configDB: 192.168.0.92:20000,192.168.0.93:20000,192.168.0.94:20000
-  chunkSize: 64
-</code></pre>
-<h3 id="2&#x3001;&#x914D;&#x7F6E;-configsvr-&#x5206;&#x7247;&#x96C6;&#x914D;&#x7F6E;&#x8282;&#x70B9;">2&#x3001;&#x914D;&#x7F6E; configsvr &#x5206;&#x7247;&#x96C6;&#x914D;&#x7F6E;&#x8282;&#x70B9;</h3>
+<h3 id="&#x4F7F;&#x7528;&#x683C;&#x5F0F;">&#x4F7F;&#x7528;&#x683C;&#x5F0F;</h3>
+<p><code>sh.saddShard &#xFF08;&#x201C;&lt;replica_set&gt; / &lt;hostname&gt; &lt;&#xFF1A;port&gt;&#x201D; &#xFF09;</code></p>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<h4 id="&#x5E73;&#x8861;">&#x5E73;&#x8861;</h4>
+<p>&#x5C06;&#x5206;&#x7247;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x7247;&#x7FA4;&#x96C6;&#x65F6;&#xFF0C;&#x4F1A;&#x5F71;&#x54CD;&#x6240;&#x6709;&#x73B0;&#x6709;&#x5206;&#x7247;&#x96C6;&#x5408;&#x7684;&#x7FA4;&#x96C6;&#x5206;&#x7247;&#x4E4B;&#x95F4;&#x7684;&#x5757;&#x7684;&#x5E73;&#x8861; &#x3002;&#x5E73;&#x8861;&#x5668;&#x5C06;&#x5F00;&#x59CB;&#x8FC1;&#x79FB;&#x5757;&#xFF0C;&#x4EE5;&#x4FBF;&#x7FA4;&#x96C6;&#x5B9E;&#x73B0;&#x5E73;&#x8861;&#x3002;
+&#x7248;&#x672C;2.6&#x4E2D;&#x5DF2;&#x66F4;&#x6539;&#xFF1A;&#x5757;&#x8FC1;&#x79FB;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#x3002;&#x4ECE;MongoDB 2.6&#x5F00;&#x59CB;&#xFF0C;&#x6E90;&#x5206;&#x7247;&#x9ED8;&#x8BA4;&#x81EA;&#x52A8;&#x5F52;&#x6863;&#x8FC1;&#x79FB;&#x7684;&#x6587;&#x6863;&#x3002;</p>
+<h4 id="&#x9690;&#x85CF;&#x6210;&#x5458;">&#x9690;&#x85CF;&#x6210;&#x5458;</h4>
 <blockquote>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x4ECE;3.4&#x5F00;&#x59CB;&#xFF0C;mongod &#x4E0D;&#x518D;&#x652F;&#x6301;&#x5C06;&#x5DF2;&#x5F03;&#x7528;&#x7684;&#x955C;&#x50CF;&#x5B9E;&#x4F8B;&#x7528;&#x4F5C;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x5668;&#xFF08;SCCC&#xFF09;&#x3002;&#x5728;&#x5C06;&#x5206;&#x7247;&#x7FA4;&#x96C6;&#x5347;&#x7EA7;&#x5230;3.4&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x5C06;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x5668;&#x4ECE;SCCC&#x8F6C;&#x6362;&#x4E3A;CSRS&#x3002;</p>
+<p>&#x60A8;&#x4E0D;&#x80FD;&#x5728;&#x63D0;&#x4F9B;&#x7684;&#x79CD;&#x5B50;&#x5217;&#x8868;&#x4E2D; &#x5305;&#x542B;&#x9690;&#x85CF;&#x7684;&#x6210;&#x5458;sh.addShard()&#x3002;</p>
 </blockquote>
-<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat config/config.conf 
-systemLog:
-   destination: file
-   path: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/logs/config.log&quot;
-   logAppend: true
-storage:
-   dbPath: &quot;/usr/local/mongodb-linux-x86_64-rhel70-3.2.22/data&quot;
-   directoryPerDB: true
-   journal:
-      enabled: true
-processManagement:
-   fork: true
-net:
-   bindIp: 192.168.0.92
-   port: 20000
-sharding:
-   clusterRole: configsvr
+<h2 id="shaddshardtag">sh.addShardTag()</h2>
+<h3 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h3>
+<p>sh.addShardTag(shard, tag)  #&#x4EC5;&#x5728;&#x8FDE;&#x63A5;&#x5230;mongos&#x5B9E;&#x4F8B;&#x65F6;&#x4F7F;&#x7528;</p>
+<p>&#x5728;3.4&#x7248;&#x4E2D;&#x66F4;&#x6539;&#xFF1A;&#x6B64;&#x65B9;&#x6CD5;sh.addShardToZone()&#x5728;MongoDB 3.4&#x4E2D;&#x522B;&#x540D;&#x3002;&#x4E0B;&#x9762;&#x6307;&#x5B9A;&#x7684;&#x529F;&#x80FD;&#x4ECD;&#x9002;&#x7528;&#x4E8E;MongoDB 3.2&#x3002;MongoDB 3.4&#x63D0;&#x4F9B;&#x533A;&#x57DF;&#x5206;&#x7247;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x611F;&#x77E5;&#x5206;&#x7247;&#x7684;&#x540E;&#x7EE7;&#x3002;</p>
+<p>&#x5C06;&#x5206;&#x7247;&#x4E0E;&#x6807;&#x7B7E;&#x6216;&#x6807;&#x8BC6;&#x7B26;&#x5173;&#x8054;&#x3002;MongoDB&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6807;&#x8BC6;&#x7B26;&#x5C06;&#x4F4D;&#x4E8E;&#x6807;&#x8BB0;&#x8303;&#x56F4;&#x5185;&#x7684;&#x5757;&#x6307;&#x5411;&#x7279;&#x5B9A;&#x5206;&#x7247;&#x3002;sh.addTagRange() &#x5C06;&#x5757;&#x8303;&#x56F4;&#x4E0E;&#x6807;&#x8BB0;&#x8303;&#x56F4;&#x76F8;&#x5173;&#x8054;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shard</td>
+<td>string</td>
+<td>&#x8981;&#x4E3A;&#x5176;&#x6307;&#x5B9A;&#x7279;&#x5B9A;&#x6807;&#x8BB0;&#x7684;&#x5206;&#x7247;&#x7684;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td>&#x8981;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x7247;&#x7684;&#x6807;&#x8BB0;&#x7684;&#x540D;&#x79F0;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x4F7F;&#x7528;&#x683C;&#x5F0F;">&#x4F7F;&#x7528;&#x683C;&#x5F0F;</h3>
+<pre><code class="lang-angular2">sh.addShardTag &#xFF08;&#x201C;shard0000&#x201D; &#xFF0C; &#x201C;NYC&#x201D; &#xFF09;
+sh.addShardTag &#xFF08;&#x201C;shard0001&#x201D; &#xFF0C; &#x201C;LAX&#x201D; &#xFF09;
+sh.addShardTag &#xFF08;&#x201C;shard0002&#x201D; &#xFF0C; &#x201C;NRT&#x201D; &#xFF09;
 </code></pre>
-<h3 id="3&#x3001;&#x5728;&#x5404;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x89D2;&#x8272;">3&#x3001;&#x5728;&#x5404;&#x4E2A;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x89D2;&#x8272;</h3>
-<p>&#x4EE5; node92 &#x526F;&#x672C;&#x96C6; shard1 &#x4E3A;&#x4F8B;&#xFF0C;&#x5176;&#x4ED6;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x4F9D;&#x6B21;&#x6DFB;&#x52A0;&#x3002;</p>
-<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# cat config/shard1.conf 
-...
-sharding:
-  clusterRole: shardsvr
-...
-</code></pre>
-<h3 id="4&#x3001;&#x91CD;&#x542F;&#x5404;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;-&#x542F;&#x52A8;mognos&#x548C;configsvr">4&#x3001;&#x91CD;&#x542F;&#x5404;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9; &#x542F;&#x52A8;mognos&#x548C;configsvr</h3>
-<pre><code class="lang-angular2">#&#x4E3E;&#x4F8B;&#x542F;&#x52A8; &#x4F9D;&#x6B21;&#x542F;&#x52A8;&#x5404; Mongo Cluster Node&#x3002;
-[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongos -f config/mongos.conf
-[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongod -f config/config.conf
-</code></pre>
-<h3 id="5&#x3001;&#x5728;-mongos-&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x4E3A;&#x5206;&#x7247;&#x8282;&#x70B9;">5&#x3001;&#x5728; mongos &#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x526F;&#x672C;&#x96C6;&#x8282;&#x70B9;&#x4E3A;&#x5206;&#x7247;&#x8282;&#x70B9;</h3>
-<pre><code class="lang-angular2">[root@node92 mongodb-linux-x86_64-rhel70-3.2.22]# bin/mongo 192.168.0.92:30000
-MongoDB shell version: 3.2.22
-connecting to: 192.168.0.92:30000/test
-mongos&gt; sh.addShard(&quot;shard1/192.168.0.92:27017&quot;)
-mongos&gt; sh.addShard(&quot;shard2/192.168.0.92:27018&quot;)
-mongos&gt; sh.addShard(&quot;shard3/192.168.0.92:27019&quot;)
-</code></pre>
-<h3 id="6&#x3001;&#x642D;&#x5EFA;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x5373;&#x53EF;">6&#x3001;&#x642D;&#x5EFA;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x5373;&#x53EF;</h3>
+<h2 id="shaddshardtozone">sh.addShardToZone()</h2>
 
                                 
                                 </section>
@@ -577,12 +487,12 @@ mongos&gt; sh.addShard(&quot;shard3/192.168.0.92:27019&quot;)
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 集   群">
+                <a href="baseconfig.html" class="navigation navigation-prev " aria-label="Previous page: 分片: 分片集群基础配置">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../security/" class="navigation navigation-next " aria-label="Next page: 安   全">
+                <a href="../Cluster/" class="navigation navigation-next " aria-label="Next page: 集   群">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -593,7 +503,7 @@ mongos&gt; sh.addShard(&quot;shard3/192.168.0.92:27019&quot;)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集群: 分片副本集群基础配置","level":"1.6.1","depth":2,"next":{"title":"安   全","level":"1.7","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"安全: 副本集群安全认证","level":"1.7.1","depth":2,"path":"security/replication-security.md","ref":"security/replication-security.md","articles":[]}]},"previous":{"title":"集   群","level":"1.6","depth":1,"path":"Cluster/README.md","ref":"Cluster/README.md","articles":[{"title":"集群: 分片副本集群基础配置","level":"1.6.1","depth":2,"path":"Cluster/baseconfig.md","ref":"Cluster/baseconfig.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Cluster/baseconfig.md","mtime":"2019-04-30T03:47:48.263Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T06:17:19.222Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"分片: 有关分片集群设置的一些命令","level":"1.5.2","depth":2,"next":{"title":"集   群","level":"1.6","depth":1,"path":"Cluster/README.md","ref":"Cluster/README.md","articles":[{"title":"集群: 分片副本集群基础配置","level":"1.6.1","depth":2,"path":"Cluster/baseconfig.md","ref":"Cluster/baseconfig.md","articles":[]}]},"previous":{"title":"分片: 分片集群基础配置","level":"1.5.1","depth":2,"path":"Shards/baseconfig.md","ref":"Shards/baseconfig.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Shards/command.md","mtime":"2019-04-30T06:17:15.428Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T06:17:19.222Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
